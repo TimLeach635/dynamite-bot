@@ -1,9 +1,17 @@
+const beatMap = {
+    "R": "P",
+    "S": "R",
+    "P": "S",
+    "D": "W",
+    "W": "P"
+}
+
 class Bot {
     makeMove(gamestate) {
         if (gamestate.rounds.length === 0) {
             return "P";
         } else {
-            return gamestate.rounds[gamestate.rounds.length - 1].p2;
+            return beatMap[gamestate.rounds[gamestate.rounds.length - 1].p2];
         }
     }
 }
